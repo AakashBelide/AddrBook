@@ -70,7 +70,6 @@ public class App {
 				// Closing the connection
 				con.close();
 			} catch (Exception e) {
-				
 				System.out.println(e);
 			}
 			
@@ -148,7 +147,7 @@ public class App {
 						// If input is 0 then exit/break
 						if(u_name.equals("0")) {
 							System.out.println("Exiting address book.");
-							
+							sc.close();
 							System.exit(0);
 						}else if(users.containsKey(u_name)) {
 							System.out.println("Password:");
@@ -161,13 +160,11 @@ public class App {
 							}else {
 								System.out.println("Invalid password. ");
 								System.out.println("Exiting address book.");
-								
 								System.exit(0);
 							}
 						}else {
 							System.out.println("Invalid credentials.");
 							System.out.println("Exiting address book.");
-							
 							System.exit(0);
 						}
 						
@@ -177,7 +174,7 @@ public class App {
 						
 						while(ext_2) {
 							System.out.println("Kindly select an operation from below:");
-							// Exit statement
+							// All the operations listed along with exit
 							System.out.println("0) Exit");
 							System.out.println("1) Show your address book.");
 							System.out.println("2) Add a new contact to your address book.");
@@ -192,7 +189,7 @@ public class App {
 							// If operation is 0 then exit/break
 							if(op==0) {
 								System.out.println("Exiting address book.");
-								
+                                sc.close();
 								System.exit(0);
 							}else if(op==1) {
 								try {
@@ -222,13 +219,11 @@ public class App {
 									String yn = sc.next();
 									if(yn.equals("y")) {
 										System.out.println("Exiting address book.");
-										
 										System.exit(0);
 									}
 								} catch (Exception e) {
 									System.out.println(e);
 									System.out.println("Exiting address book.");
-									
 									System.exit(0);
 								}
 							}else if(op==2) {
@@ -265,14 +260,12 @@ public class App {
 									String yn = sc.next();
 									if(yn.equals("y")) {
 										System.out.println("Exiting address book.");
-										
 										System.exit(0);
 									}
 								} catch (Exception e) {
 									System.out.println("Failed to add new contact to the address book.");
 									System.out.println(e);
 									System.out.println("Exiting address book.");
-									
 									System.exit(0);
 								}
 							}else if(op==3) {
@@ -313,14 +306,12 @@ public class App {
 									String yn = sc.next();
 									if(yn.equals("y")) {
 										System.out.println("Exiting address book.");
-										
 										System.exit(0);
 									}
 								} catch (Exception e) {
 									System.out.println("Failed to update the contact in address book.");
 									System.out.println(e);
 									System.out.println("Exiting address book.");
-									
 									System.exit(0);
 								}
 							}else if(op==4) {
@@ -351,14 +342,12 @@ public class App {
 									String yn = sc.next();
 									if(yn.equals("y")) {
 										System.out.println("Exiting address book.");
-										
 										System.exit(0);
 									}
 								} catch (Exception e) {
 									System.out.println("Failed to delete the contact from address book.");
 									System.out.println(e);
 									System.out.println("Exiting address book.");
-									
 									System.exit(0);
 								}
 							}else if(op==5) {
@@ -419,14 +408,12 @@ public class App {
 									String yn = sc.next();
 									if(yn.equals("y")) {
 										System.out.println("Exiting address book.");
-										
 										System.exit(0);
 									}
 									
 								} catch (Exception e) {
 									System.out.println(e);
 									System.out.println("Exiting address book.");
-									
 									System.exit(0);
 								}
 							}else if(op==6){
@@ -483,13 +470,12 @@ public class App {
 				}else {
 					System.out.println("Invalid input.");
 					System.out.println("Exiting address book.");
-					
 					System.exit(0);
 				}
 			}catch(Exception e) {
 				System.out.println("Invalid input.");
 				System.out.println(e);
-				
+                sc.close();
 				System.exit(0);
 			}
 		}
